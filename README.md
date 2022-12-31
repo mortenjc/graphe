@@ -38,7 +38,7 @@ Draws the graph and a given path on it using graphviz with neato layout. For exa
 
 will produce a figure looking similar to this:
 
-![Medium Graph](doc/graph.png)
+![Medium Graph](https://github.com/mortenjc/pygraph/blob/main/doc/graph.png)
 
 ## BFSearch
 Breadth first search will find one of possibly multiple shortest paths.
@@ -49,10 +49,12 @@ Breadth first search will find one of possibly multiple shortest paths.
     fig = draw.Draw()
     fig.toPNG(G, bfpath)
 
-![Medium Graph](doc/short.png)
+![Medium Graph](https://github.com/mortenjc/pygraph/blob/main/doc/short.png)
 
 ## DFSearch
-Depth first search will find one of possibly multiple longest paths of the graph.
+Depth first search will find one of possibly multiple paths of the graph. These
+are not guaranteed to be longest, but they will typically be longer than the
+paths found by breadth first search.
 
     G = graph.Graph('mediumG.txt')
     dfs = dfs.DFSearch(G, 0)
@@ -60,4 +62,4 @@ Depth first search will find one of possibly multiple longest paths of the graph
     fig = draw.Draw()
     fig.toPNG(G, dfpath)
 
-![Medium Graph](doc/longest.png)
+![Medium Graph](https://github.com/mortenjc/pygraph/blob/main/doc/longest.png)
