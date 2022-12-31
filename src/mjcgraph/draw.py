@@ -2,13 +2,11 @@
 
 import sys
 import graphviz
-from graph import Graph
-from bfs import BFSearch
 
-
-class Dot:
+class Draw:
     def toPNG(self, Graph, path):
         g = graphviz.Graph()
+
         g.engine = 'neato'
         g.attr('node', label='', color='black', shape='circle', style='filled', width='0.1')
         g.attr('edge', color='grey', penwidth='0.75')
@@ -34,12 +32,3 @@ class Dot:
 
 
         g.view()
-
-
-if __name__ == '__main__':
-    infile = sys.argv[1] if len(sys.argv) > 1 else ''
-    G = Graph(infile)
-    print(G.to_string())
-    D = Dot()
-    B = BFSearch(G, 0)
-    D.toPNG(G, B.path_to(249))
