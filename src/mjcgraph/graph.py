@@ -30,9 +30,3 @@ class Graph():
     def to_string(self):
         s = f'G: {self.V} vertices, {self.E} edges'
         return s
-
-
-if __name__ == '__main__':
-    infile = sys.argv[1] if len(sys.argv) > 1 else ''
-    g = Graph(infile)
-    print(g.to_string())

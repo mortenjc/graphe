@@ -10,4 +10,5 @@ G = graph.Graph(infile)
 print(G.to_string())
 
 fig = draw.Draw()
+fig.node_attr(label='')
 fig.toPNG(G, [])

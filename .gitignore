@@ -3,3 +3,4 @@ Graph.gv.pdf
 dist/
 __pycache__
 *.egg-info
+build/

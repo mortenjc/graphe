@@ -36,6 +36,7 @@ class BFSearch():
         while x != self.s:
             path.append(x)
             x = self.edgeTo[x]
+        path.append(self.s)
         return path
 
 

@@ -5,14 +5,14 @@ from mjcgraph import graph
 from mjcgraph import bfs
 from mjcgraph import draw
 
-infile = "../data/mediumG.txt"
+infile = "data/mediumG.txt"
 
 G = graph.Graph(infile)
-print(G.to_string())
 
 bfs = bfs.BFSearch(G, 0)
 
 bfpath = bfs.path_to(200)
 
 fig = draw.Draw()
-fig.toPNG(G, bfpath)
+fig.node_attr(label='')
+fig.toPNG(G)

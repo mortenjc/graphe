@@ -34,11 +34,22 @@ Draws the graph and a given path on it using graphviz with neato layout. For exa
 
     G = graph.Graph('mediumG.txt')
     fig = draw.Draw()
-    fig.toPNG(G, [])
+    fig.toPNG(G)
 
 will produce a figure looking similar to this:
 
 ![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/graph.png)
+
+### Graphviz keywords
+The default values of node and adge attributes have been chosen to make
+graphs render like in the text book 'Algorithms' by Robert Sedgewick.
+
+You can customise the Graphviz attributes for nodes and edges, though:
+
+    fig = draw.Draw()
+    fig.node_attr(color='red')
+    fig.edge_attr(penwidth='0.75')
+
 
 ## BFSearch
 Breadth first search will find one of possibly multiple shortest paths.
