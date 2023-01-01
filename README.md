@@ -1,14 +1,12 @@
 [![PyPI version](https://badge.fury.io/py/mjcgraph.svg)](https://badge.fury.io/py/mjcgraph)
 
 # pygraph
-Learning graph algorithms. Inspired by the numerous
-breadth first search problems in advent of code reminding
-me of the Algorithms course I took way back then.
+A collection of graph algorithms and visualisations.
 
 ## Graph
 The basic Graph object. Contains a list of nodes and edges.
 
-Graphs can be loaded from ascii files, the format currently consist of two lines specifying the number (V) of vertices and (E) of edges followed by E pairs of connected vertices. For example:
+Graphs can be populated manually or loaded from text files. The file format consists of two lines specifying the number (V) of vertices and (E) of edges followed by E pairs of connected vertices. For example:
 
     250
     1273
@@ -32,11 +30,11 @@ Graphs can be loaded from ascii files, the format currently consist of two lines
     0 225
 
 ## Draw
-Draws the graph and a given path on it using graphviz with neato layout. For example, the code
+Draws the graph and a given path on it using Graphviz with neato layout. For example, the code
 
     G = graph.Graph('mediumG.txt')
     fig = draw.Draw()
-    fig.toPNG(G)
+    fig.draw(G)
 
 will produce a figure looking similar to this:
 
@@ -60,7 +58,7 @@ Breadth first search will find one of possibly multiple shortest paths.
     bfs = bfs.BFSearch(G, 0)   # find paths from vertex 0
     bfpath = bfs.path_to(200)  # return path from vertex 0 to 200
     fig = draw.Draw()
-    fig.toPNG(G, bfpath)
+    fig.draw(G, bfpath)
 
 ![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/short.png)
 
@@ -73,9 +71,9 @@ paths found by breadth first search.
     dfs = dfs.DFSearch(G, 0)
     dfpath = dfs.path_to(200)
     fig = draw.Draw()
-    fig.toPNG(G, dfpath)
+    fig.draw(G, dfpath)
 
-![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/longest.png)
+![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/long.png)
 
 ## SymbolGraph
 The symbol graph reads pairs of edge names and generates a Graph and a symbol table
