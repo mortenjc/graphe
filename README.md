@@ -76,3 +76,17 @@ paths found by breadth first search.
     fig.toPNG(G, dfpath)
 
 ![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/longest.png)
+
+## SymbolGraph
+The symbol graph reads pairs of edge names and generates a Graph and a symbol table
+mapping vertice indices to names.
+
+    G = symbolgraph.SymbolGraph( "routes.txt")
+
+    fig = draw.Draw()
+    fig.set_names(G.keys)
+    fig.node_attr(width='0.3', height='0.3', shape='circle', style='filled',
+                  color='gray', fontcolor='black', fontsize='8')
+    fig.draw(G.graph())
+
+![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/symbolg.png)

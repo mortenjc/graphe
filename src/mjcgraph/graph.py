@@ -3,14 +3,22 @@
 import sys
 
 class Graph():
-    def __init__(self, infile):
+    def __init__(self, arg):
+        self.E = 0
+        if type(arg) is int:
+            self.V = arg
+            self.G = [[] for i in range(self.V)]
+            return
+
+        infile = arg # assume string
         with open(infile) as f:
             self.V = int(f.readline())
-            self.E = int(f.readline())
+            E = int(f.readline())
             self.G = [[] for i in range(self.V)]
-            for i in range(self.E):
-                From, To = f.readline().split()
+            for line in f:
+                From, To = line.split()
                 self.add_edge(int(From), int(To))
+        assert self.E == E
         f.close()
 
 
@@ -19,7 +27,8 @@ class Graph():
         assert w < self.V
         self.G[v].append(w)
         self.G[w].append(v)
-        pass
+        self.E += 1
+        return
 
 
     def adj(self, v):
@@ -30,3 +39,17 @@ class Graph():
     def to_string(self):
         s = f'G: {self.V} vertices, {self.E} edges'
         return s
+
+
+if __name__ == '__main__':
+    G = Graph(5)
+    assert G.V == 5
+    assert G.E == 0
+    assert len(G.G) == 5
+    G.add_edge(0, 1)
+    G.add_edge(1, 2)
+    assert G.E == 2
+
+    G2 = Graph('../../data/tinyG.txt')
+    assert G2.V == 13
+    assert G2.E == 13
