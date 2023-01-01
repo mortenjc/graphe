@@ -14,4 +14,6 @@ dfs = dfs.DFSearch(G, 0)
 dfpath = dfs.path_to(200)
 
 fig = draw.Draw()
+fig.node_attr(label='')
+fig.edge_attr(color='gray', penwidth='0.75')
 fig.toPNG(G, dfpath)

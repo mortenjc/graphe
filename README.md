@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/mjcgraph.svg)](https://badge.fury.io/py/mjcgraph)
+
 # pygraph
 Learning graph algorithms. Inspired by the numerous
 breadth first search problems in advent of code reminding
