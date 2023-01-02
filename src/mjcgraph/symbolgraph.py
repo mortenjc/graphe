@@ -29,6 +29,10 @@ class SymbolGraph():
     def graph(self):
         return self.G
 
+
+    def node_names(self):
+        return self.keys
+
 if __name__ == '__main__':
     sg = SymbolGraph('../../data/routes.txt')
     assert sg.G.V == 10
