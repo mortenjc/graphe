@@ -4,8 +4,11 @@ import sys
 import graphviz
 
 class Draw:
-    def __init__(self):
-        self.g = graphviz.Graph()
+    def __init__(self, digraph=False):
+        if digraph:
+            self.g = graphviz.Digraph()
+        else:
+            self.g = graphviz.Graph()
         self.g.engine = 'neato'
         self.g.attr('node', margin='0', fontsize='4',
                     fontcolor='white', color='black', shape='circle',

@@ -1,5 +1,5 @@
-Graph.gv
-Graph.gv.pdf
+*.gv
+*.gv.pdf
 dist/
 __pycache__
 *.egg-info
