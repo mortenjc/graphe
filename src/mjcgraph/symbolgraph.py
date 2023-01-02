@@ -7,7 +7,7 @@ from mjcgraph import graph
 class SymbolGraph():
     def __init__(self, infile):
         self.keys = [] # vertice index to name
-        self.ST = {} # vertive name to index
+        self.ST = {} # vertice name to index
 
         lines = open(infile).read().splitlines()
         for line in lines:
@@ -17,6 +17,7 @@ class SymbolGraph():
                 if not i in self.ST:
                     self.ST[i] = len(self.ST)
                     self.keys.append(i)
+
         self.G = graph.Graph(len(self.ST))
 
         lines = open(infile).read().splitlines()
