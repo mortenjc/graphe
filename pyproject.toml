@@ -1,6 +1,6 @@
 [project]
 name = "mjcgraph"
-version = "0.1.2"
+version = "0.1.3"
 authors = [
   { name="Morten Jagd Christensen", email="mortenjc@jcaps.com" },
 ]
@@ -15,7 +15,6 @@ classifiers = [
 dependencies = [
     "graphviz"
 ]
-
 
 [project.urls]
 "Homepage" = "https://github.com/mortenjc/pygraph"

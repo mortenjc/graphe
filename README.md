@@ -38,7 +38,7 @@ Draws the graph and a given path on it using Graphviz with neato layout. For exa
 
 will produce a figure looking similar to this:
 
-![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/graph.png)
+![](https://raw.githubusercontent.com/mortenjc/pygraph/main/docs/source/images/graph.png)
 
 ### Graphviz keywords
 The default values of node and adge attributes have been chosen to make
@@ -60,7 +60,7 @@ Breadth first search will find one of possibly multiple shortest paths.
     fig = draw.Draw()
     fig.draw(G, bfpath)
 
-![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/short.png)
+![](https://raw.githubusercontent.com/mortenjc/pygraph/main/docs/source/images/short.png)
 
 ## DFSearch
 Depth first search will find one of possibly multiple paths of the graph. These
@@ -73,7 +73,7 @@ paths found by breadth first search.
     fig = draw.Draw()
     fig.draw(G, dfpath)
 
-![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/long.png)
+![](https://raw.githubusercontent.com/mortenjc/pygraph/main/docs/source/images/long.png)
 
 ## SymbolGraph
 The symbol graph reads pairs of edge names and generates a Graph and a symbol table
@@ -87,4 +87,4 @@ mapping vertice indices to names.
                   color='gray', fontcolor='black', fontsize='8')
     fig.draw(G.graph())
 
-![](https://raw.githubusercontent.com/mortenjc/pygraph/main/doc/symbolg.png)
+![](https://raw.githubusercontent.com/mortenjc/pygraph/main/docs/source/images/symbolg.png)
