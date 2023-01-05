@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
-from src.mjcgraph import graph
-from src.mjcgraph import bfs
-from src.mjcgraph import draw
+from mjcgraph import graph
+from mjcgraph import bfs
+from mjcgraph import draw
 
 import unittest
 

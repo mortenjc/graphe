@@ -12,9 +12,6 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
 ]
-dependencies = [
-    "graphviz"
-]
 
 [project.urls]
 "Homepage" = "https://github.com/mortenjc/pygraph"
@@ -24,3 +21,11 @@ dependencies = [
 [build-system]
 requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src"
+]
+testpaths = [
+    "tests"
+]
