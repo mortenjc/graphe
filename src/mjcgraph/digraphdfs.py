@@ -7,7 +7,20 @@ class DirectedDFSearch():
         self.marked = [False for i in range(Digraph.V)]
         self.edgeTo = [-1 for i in range(Digraph.V)]
         self.s = s
-        self.dfs(Digraph, s)
+        self.V = Digraph.V
+        if type(s) is int:
+            self.validate_vertex(s)
+            self.dfs(Digraph, s)
+        else:
+            for v in s:
+                self.validate_vertex(v)
+            for v in s:
+                if not self.marked[v]:
+                    self.dfs(Digraph, v);
+
+
+    def validate_vertex(self, v):
+        assert v >= 0 and v < self.V
 
 
     def dfs(self, Digraph, v):
@@ -17,7 +30,8 @@ class DirectedDFSearch():
                 self.edgeTo[w] = v
                 self.dfs(Digraph, w)
 
-    def marked(self, v):
+
+    def is_marked(self, v):
         return self.marked[v]
 
 
@@ -35,6 +49,7 @@ class DirectedDFSearch():
             x = self.edgeTo[x]
         path.append(self.s)
         return path
+
 
     def count(self):
         return sum([1 for x in self.marked if x == True]) - 1
