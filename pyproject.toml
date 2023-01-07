@@ -1,6 +1,6 @@
 [project]
 name = "mjcgraph"
-version = "0.1.9"
+version = "0.1.10"
 authors = [
   { name="Morten Jagd Christensen", email="mortenjc@jcaps.com" },
 ]
