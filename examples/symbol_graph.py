@@ -4,12 +4,10 @@ import sys
 from mjcgraph import symbolgraph
 from mjcgraph import draw
 
-infile = "../data/routes.txt"
+G = symbolgraph.SymbolGraph('../data/jobs.txt', '/')
 
-G = symbolgraph.SymbolGraph(infile)
-
-fig = draw.Draw()
+fig = draw.Draw(digraph=True)
 fig.set_names(G.keys)
-fig.node_attr(width='0.3', height='0.3', shape='circle', style='filled',
-              color='gray', fontcolor='black', fontsize='8')
+fig.node_attr(width='0.3', height='0.3', shape='', style='',
+              color='gray', fontcolor='black', fontsize='4')
 fig.draw(G.graph())

@@ -5,26 +5,34 @@ import sys
 from mjcgraph import graph
 
 class SymbolGraph():
-    def __init__(self, infile):
+    def __init__(self, infile, sc=' '):
         self.keys = [] # vertice index to name
         self.ST = {} # vertice name to index
 
         lines = open(infile).read().splitlines()
         for line in lines:
-            res = line.split()
-            assert len(res) == 2
+            res = line.split(sc)
+            assert len(res) >= 2
             for i in res:
                 if not i in self.ST:
                     self.ST[i] = len(self.ST)
                     self.keys.append(i)
 
         self.G = graph.Graph(len(self.ST))
+        print(self.ST)
 
         lines = open(infile).read().splitlines()
         for line in lines:
-            res = line.split()
-            assert len(res) == 2
-            self.G.add_edge(self.ST[res[0]], self.ST[res[1]])
+            print()
+            res = line.split(sc)
+            print(f'len(res): {len(res)} - {res}')
+            assert len(res) >= 2
+
+            v = self.ST[res[0]]
+            for i in res[1:]:
+                w = self.ST[i]
+                print(f'{i}: add edge from {v} ({res[v]}) -> {w} ({res[w]})')
+                self.G.add_edge(v, w)
 
 
     def graph(self):

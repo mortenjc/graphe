@@ -6,6 +6,7 @@ from mjcgraph import draw
 
 DG = digraph.Digraph('../data/tinyDG.txt')
 print(DG.to_string())
+print(DG.G)
 
 fig = draw.Draw(digraph=True)
 fig.node_attr(fontsize='8')
