@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph import graph
-from mjcgraph import bfs
+from mjcgraph.graph import graph
+from mjcgraph.graph import bfs
 from mjcgraph import draw
 
 infile = "../data/mediumG.txt"

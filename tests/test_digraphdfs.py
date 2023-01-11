@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
-from mjcgraph import digraph
-from mjcgraph import digraphdfs
+from mjcgraph.digraph import digraph
+from mjcgraph.digraph import digraphdfs
 from mjcgraph import draw
 
 import unittest
@@ -13,15 +13,15 @@ class TestDigraphDFSearch(unittest.TestCase):
         assert DG.V == 250
 
         dfsearch = digraphdfs.DirectedDFSearch(DG, 0)
-        self.assertTrue(dfsearch.has_path_to(197))
-
-        self.assertTrue(len(dfsearch.path_to(0)) == 1)
-        self.assertEqual(len(dfsearch.path_to(197)), 8)
+        assert dfsearch.has_path_to(197)
+        assert len(dfsearch.path_to(0)) == 1
+        assert len(dfsearch.path_to(197)) == 8
 
 
     def test_tiny(self):
         DG = digraph.Digraph('data/tinyG.txt')
         assert DG.V == 13
+        assert DG.E == 13
 
         dfsearch = digraphdfs.DirectedDFSearch(DG, 0)
 

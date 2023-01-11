@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph import digraph
-from mjcgraph import digraphdfs
+from mjcgraph.digraph import digraph
+from mjcgraph.digraph import digraphdfs
 from mjcgraph import draw
 
 DG = digraph.Digraph('../data/mediumG.txt')

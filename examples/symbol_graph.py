@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph import symbolgraph
+from mjcgraph.digraph import symbolgraph
 from mjcgraph import draw
 
 G = symbolgraph.SymbolGraph('../data/jobs.txt', '/')

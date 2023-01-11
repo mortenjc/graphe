@@ -1,10 +1,10 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 import sys
 
-from mjcgraph import graph
+from mjcgraph.digraph import digraph
 
-class SymbolGraph():
+class SymbolDigraph():
     def __init__(self, infile, sc=' '):
         self.keys = [] # vertice index to name
         self.ST = {} # vertice name to index
@@ -18,20 +18,18 @@ class SymbolGraph():
                     self.ST[i] = len(self.ST)
                     self.keys.append(i)
 
-        self.G = graph.Graph(len(self.ST))
-        print(self.ST)
+        assert len(self.ST) == len(self.keys)
+
+        self.G = digraph.Digraph(len(self.ST))
 
         lines = open(infile).read().splitlines()
         for line in lines:
-            print()
             res = line.split(sc)
-            print(f'len(res): {len(res)} - {res}')
             assert len(res) >= 2
 
             v = self.ST[res[0]]
             for i in res[1:]:
                 w = self.ST[i]
-                print(f'{i}: add edge from {v} ({res[v]}) -> {w} ({res[w]})')
                 self.G.add_edge(v, w)
 
 
@@ -43,7 +41,7 @@ class SymbolGraph():
         return self.keys
 
 if __name__ == '__main__':
-    sg = SymbolGraph('../../data/routes.txt')
+    sg = SymbolDigraph('../../../data/routes.txt')
     assert sg.G.V == 10
     assert sg.G.E == 18
     assert sg.keys[0] == 'JFK'

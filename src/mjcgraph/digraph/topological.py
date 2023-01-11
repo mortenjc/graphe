@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
-import sys
-from mjcgraph import symbolgraph
-from mjcgraph import ddfo
+
+from mjcgraph.digraph import symboldigraph
+from mjcgraph.digraph import ddfo
 
 
 class Topological():
@@ -16,15 +16,16 @@ class Topological():
         for i, v in enumerate(self.order):
             self.rank[v] = i
 
+
     def get_order(self):
         return self.order
 
+
 if __name__ == '__main__':
 
-    SG = symbolgraph.SymbolGraph('../../data/jobs.txt', '/')
-    print(SG.G)
+    SG = symboldigraph.SymbolDigraph('../../../data/jobs.txt', '/')
+
     TS = Topological(SG.G)
-    print(TS.G.G)
     names = SG.node_names()
     for v in TS.get_order():
         print(f'{v} {names[v]}')
