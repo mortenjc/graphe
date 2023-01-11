@@ -3,32 +3,33 @@
 import sys
 
 class DirectedDFSearch():
-    def __init__(self, Digraph, s):
-        self.marked = [False for i in range(Digraph.V)]
-        self.edgeTo = [-1 for i in range(Digraph.V)]
+    def __init__(self, DG, s):
+        assert isinstance(DG, digraph.Digraph)
+        self.marked = [False for i in range(DG.V)]
+        self.edgeTo = [-1 for i in range(DG.V)]
         self.s = s
-        self.V = Digraph.V
+        self.V = DG.V
         if type(s) is int:
             self.validate_vertex(s)
-            self.dfs(Digraph, s)
+            self.dfs(DG, s)
         else:
             for v in s:
                 self.validate_vertex(v)
             for v in s:
                 if not self.marked[v]:
-                    self.dfs(Digraph, v);
+                    self.dfs(DG, v);
 
 
     def validate_vertex(self, v):
         assert v >= 0 and v < self.V
 
 
-    def dfs(self, Digraph, v):
+    def dfs(self, DG, v):
         self.marked[v] = True
-        for w in Digraph.adj(v):
+        for w in DG.adj(v):
             if not self.marked[w]:
                 self.edgeTo[w] = v
-                self.dfs(Digraph, w)
+                self.dfs(DG, w)
 
 
     def is_marked(self, v):

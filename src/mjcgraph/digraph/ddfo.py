@@ -6,29 +6,30 @@ from collections import deque
 
 
 class DepthFirstOrder():
-    def __init__(self, Digraph):
-        self.marked = [False for i in range(Digraph.V)]
-        self.pre = [-1 for i in range(Digraph.V)]
-        self.post = [-1 for i in range(Digraph.V)]
+    def __init__(self, DG):
+        assert isinstance(DG, digraph.Digraph)
+        self.marked = [False for i in range(DG.V)]
+        self.pre = [-1 for i in range(DG.V)]
+        self.post = [-1 for i in range(DG.V)]
         self.postorder = []
         self.preorder = []
         self.preCounter = 0
         self.postCounter = 0
-        for v in range(Digraph.V):
+        for v in range(DG.V):
             if not self.marked[v]:
-                self.dfs(Digraph, v)
+                self.dfs(DG, v)
 
         assert self.check() == True
 
 
-    def dfs(self, Digraph, v):
+    def dfs(self, DG, v):
         self.marked[v] = True;
         self.pre[v] = self.preCounter
         self.preCounter += 1
         self.preorder.append(v);
-        for w in Digraph.adj(v):
+        for w in DG.adj(v):
             if not self.marked[w]:
-                self.dfs(Digraph, w)
+                self.dfs(DG, w)
         self.postorder.append(v)
         self.post[v] = self.postCounter
         self.postCounter += 1

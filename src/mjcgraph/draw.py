@@ -9,7 +9,7 @@ class Draw:
             self.g = graphviz.Digraph()
         else:
             self.g = graphviz.Graph()
-        self.g.engine = 'neato'
+        self.g.engine = 'dot'
         self.g.attr('node', margin='0', fontsize='4',
                     fontcolor='white', color='black', shape='circle',
                     style='filled', width='0.1')
@@ -54,9 +54,9 @@ class Draw:
                 wname = self.get_name(w)
                 if not (w, v) in seen:
                     if (w, v) in pset:
-                        self.g.edge(vname, wname, color='black', penwidth='2.5')
+                        self.g.edge(vname, wname, color='black', penwidth='2.5', rank=f'{v}')
                     else:
-                        self.g.edge(vname, wname)
+                        self.g.edge(vname, wname, rank=f'{v}')
                     seen.add((v,w))
 
         self.g.view()

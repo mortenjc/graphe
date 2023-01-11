@@ -20,7 +20,7 @@ class SymbolDigraph():
 
         assert len(self.ST) == len(self.keys)
 
-        self.G = digraph.Digraph(len(self.ST))
+        self.DG = digraph.Digraph(len(self.ST))
 
         lines = open(infile).read().splitlines()
         for line in lines:
@@ -30,15 +30,16 @@ class SymbolDigraph():
             v = self.ST[res[0]]
             for i in res[1:]:
                 w = self.ST[i]
-                self.G.add_edge(v, w)
+                self.DG.add_edge(v, w)
 
 
     def graph(self):
-        return self.G
+        return self.DG
 
 
     def node_names(self):
         return self.keys
+
 
 if __name__ == '__main__':
     sg = SymbolDigraph('../../../data/routes.txt')

@@ -2,14 +2,21 @@
 
 
 from mjcgraph.digraph import symboldigraph
+from mjcgraph.digraph import cycle
 from mjcgraph.digraph import ddfo
 
 
 class Topological():
-    def __init__(self, Digraph):
-        self.G = Digraph
+    def __init__(self, G):
+        assert isinstance(G, digraph.Digraph)
+        self.G = G
         self.rank = [-1 for i in range(self.G.V)]
-        # add cycle check later
+
+        cycle = cycle.DirectedCycle(G)
+        if cycle.has_cycle():
+            print('Topological sort not - graph has cycle')
+            raise Exception('G has cycle')
+
         dfo = ddfo.DepthFirstOrder(self.G)
         self.order = dfo.get_reverse_post()
 

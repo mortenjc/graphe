@@ -11,7 +11,7 @@ class Regex():
         self.re = regexp.strip()
         self.M = len(self.re)
         ops = deque()
-        self.G = digraph.Digraph(self.M + 1)
+        self.DG = digraph.Digraph(self.M + 1)
 
         for i in range(self.M):
             lp = i
@@ -29,19 +29,19 @@ class Regex():
                     assert False
 
             if i < self.M-1 and self.re[i+1] == '*':
-                self.G.add_edge(lp, i+1)
-                self.G.add_edge(i+1, lp)
+                self.DG.add_edge(lp, i+1)
+                self.DG.add_edge(i+1, lp)
             if self.re[i] == '(' or self.re[i] == '*' or self.re[i] == ')':
-                self.G.add_edge(i, i+1)
+                self.DG.add_edge(i, i+1)
         if len(ops) != 0:
             raise Exception('invalid regular expression {}'.format(regexp))
 
 
     def match(self, text):
-        dfs = digraphdfs.DirectedDFSearch(self.G, 0)
+        dfs = digraphdfs.DirectedDFSearch(self.DG, 0)
         pc = set()
         invalid = set(['*', '|', '(', ')'])
-        for v in range(self.G.V):
+        for v in range(self.DG.V):
             if dfs.is_marked(v):
                 pc.add(v)
 
@@ -59,9 +59,9 @@ class Regex():
                 if len(match) == 0:
                     continue
 
-                dfs = digraphdfs.DirectedDFSearch(self.G, match);
+                dfs = digraphdfs.DirectedDFSearch(self.DG, match);
                 pc = set()
-                for v in range(self.G.V):
+                for v in range(self.DG.V):
                     if (dfs.is_marked(v)):
                         pc.add(v)
 
