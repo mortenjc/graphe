@@ -42,21 +42,3 @@ class DirectedCycle():
 
     def get_cycle(self):
         return self.cycle
-
-
-if __name__ == '__main__':
-    G = digraph.Digraph(4)
-    G.add_edge(0, 1)
-    G.add_edge(1, 2)
-    G.add_edge(2, 3)
-    cycle = DirectedCycle(G)
-    assert cycle.has_cycle() == False
-    G.add_edge(3, 1)
-    cycle = DirectedCycle(G)
-    assert cycle.has_cycle() == True
-
-    c = []
-    while cycle.cycle:
-        c.append(cycle.cycle.pop())
-
-    print(f'cycle: {c}')

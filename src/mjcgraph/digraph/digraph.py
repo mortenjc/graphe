@@ -46,17 +46,3 @@ class Digraph():
     def to_string(self):
         s = f'G: {self.V} vertices, {self.E} edges'
         return s
-
-
-if __name__ == '__main__':
-    G = Digraph(5)
-    assert G.V == 5
-    assert G.E == 0
-    assert len(G.G) == 5
-    G.add_edge(0, 1)
-    G.add_edge(1, 2)
-    assert G.E == 2
-
-    G2 = Digraph('../../data/tinyDG.txt')
-    assert G2.V == 13
-    assert G2.E == 22
