@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
-from mjcgraph.digraph import digraph
-from mjcgraph.digraph import regex
-from mjcgraph import draw
+from graphe.digraph import digraph
+from graphe.digraph import regex
+from graphe import draw
 
 
 re = regex.Regex('(A*B|AC)D')

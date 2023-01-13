@@ -2,7 +2,7 @@
 
 import sys
 
-from mjcgraph.digraph import digraph
+from graphe.digraph import digraph
 
 class SymbolDigraph():
     def __init__(self, infile, sc=' '):

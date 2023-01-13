@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3
 
-from mjcgraph.digraph import digraph
+from graphe.digraph import digraph
 
 class DirectedDFSearch():
     def __init__(self, DG, s):

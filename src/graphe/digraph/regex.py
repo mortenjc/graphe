@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph.digraph import digraph
-from mjcgraph.digraph import digraphdfs
+from graphe.digraph import digraph
+from graphe.digraph import digraphdfs
 from collections import deque
 
 

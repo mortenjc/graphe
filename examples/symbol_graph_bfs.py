@@ -1,9 +1,9 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph.digraph import symbolgraph
-from mjcgraph.graph import bfs
-from mjcgraph import draw
+from graphe.digraph import symbolgraph
+from graphe.graph import bfs
+from graphe import draw
 
 SG = symbolgraph.SymbolGraph('../data/routes.txt')
 

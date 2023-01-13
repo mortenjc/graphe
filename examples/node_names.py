@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph.graph import graph
-from mjcgraph import draw
+from graphe.graph import graph
+from graphe import draw
 
 node_names = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
 

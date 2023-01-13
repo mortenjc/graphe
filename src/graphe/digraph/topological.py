@@ -1,9 +1,9 @@
 #!/usr/local/bin/python3
 
 
-from mjcgraph.digraph import symboldigraph
-from mjcgraph.digraph import cycle
-from mjcgraph.digraph import ddfo
+from graphe.digraph import symboldigraph
+from graphe.digraph import cycle
+from graphe.digraph import ddfo
 
 
 class Topological():

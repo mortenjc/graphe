@@ -1,10 +1,10 @@
 [project]
-name = "mjcgraph"
-version = "0.2.0"
+name = "graphe"
+version = "0.0.1"
 authors = [
   { name="Morten Jagd Christensen", email="mortenjc@jcaps.com" },
 ]
-description = "Some graph algorithms and visualisations"
+description = "Collection of graph algorithms, applications and visualisations"
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -14,9 +14,9 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/mortenjc/pygraph"
-"Documentation" = "https://mjcgraph-doc.readthedocs.io/en/latest/"
-"Bug Tracker" = "https://github.com/mortenjc/pygraph/issues"
+"Homepage" = "https://github.com/mortenjc/graphe"
+"Documentation" = "https://graphe.readthedocs.io/en/latest/"
+"Bug Tracker" = "https://github.com/mortenjc/graphe/issues"
 
 [build-system]
 requires = ["setuptools", "setuptools-scm"]

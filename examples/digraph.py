@@ -1,8 +1,8 @@
 #!/usr/local/bin/python3
 
 import sys
-from mjcgraph.digraph import digraph
-from mjcgraph import draw
+from graphe.digraph import digraph
+from graphe import draw
 
 DG = digraph.Digraph('../data/tinyDG.txt')
 print(DG.to_string())

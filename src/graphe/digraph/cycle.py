@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from mjcgraph.digraph import digraph
+from graphe.digraph import digraph
 from collections import deque
 
 class DirectedCycle():

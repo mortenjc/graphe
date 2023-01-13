@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from mjcgraph.digraph import digraph
-from mjcgraph.digraph import cycle
+from graphe.digraph import digraph
+from graphe.digraph import cycle
 
 import unittest
 

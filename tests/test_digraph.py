@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
-from mjcgraph.digraph import digraph
-from mjcgraph import draw
+from graphe.digraph import digraph
+from graphe import draw
 
 import unittest
 
