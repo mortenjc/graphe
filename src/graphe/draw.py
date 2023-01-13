@@ -9,7 +9,7 @@ class Draw:
             self.g = graphviz.Digraph()
         else:
             self.g = graphviz.Graph()
-        self.g.engine = 'dot'
+        self.g.engine = 'neato'
         self.g.attr('node', margin='0', fontsize='4',
                     fontcolor='white', color='black', shape='circle',
                     style='filled', width='0.1')
