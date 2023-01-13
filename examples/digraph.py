@@ -1,6 +1,5 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
-import sys
 from graphe.digraph import digraph
 from graphe import draw
 
