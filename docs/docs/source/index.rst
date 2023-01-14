@@ -24,7 +24,7 @@ Sedgewick. The Python classes are reimplementations of Java code.
 
 .. rubric:: Footnotes
 
-.. [#f1] Algorithms - https://algs4.cs.princeton.edu/home/>
+.. [#f1] Algorithms - https://algs4.cs.princeton.edu
 
 
 .. toctree::
