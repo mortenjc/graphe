@@ -2,7 +2,8 @@
 
 import sys
 
-class Graph():
+
+class Graph:
     def __init__(self, arg):
         self.E = 0
         if type(arg) is int:
@@ -10,7 +11,7 @@ class Graph():
             self.G = [[] for i in range(self.V)]
             return
 
-        infile = arg # assume string
+        infile = arg  # assume string
         with open(infile) as f:
             self.V = int(f.readline())
             E = int(f.readline())
@@ -21,7 +22,6 @@ class Graph():
         assert self.E == E
         f.close()
 
-
     def add_edge(self, v, w):
         assert v < self.V
         assert w < self.V
@@ -30,12 +30,10 @@ class Graph():
         self.E += 1
         return
 
-
     def adj(self, v):
         assert v < self.V
         return self.G[v]
 
-
     def to_string(self):
-        s = f'G: {self.V} vertices, {self.E} edges'
+        s = f"G: {self.V} vertices, {self.E} edges"
         return s
