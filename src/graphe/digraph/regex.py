@@ -21,8 +21,8 @@ class Regex:
                 opr = ops.pop()
                 if self.re[opr] == '|':
                     lp = ops.pop()
-                    self.G.add_edge(lp, opr + 1)
-                    self.G.add_edge(opr, i)
+                    self.DG.add_edge(lp, opr + 1)
+                    self.DG.add_edge(opr, i)
                 elif self.re[opr] == '(':
                     lp = opr
                 else:
