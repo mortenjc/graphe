@@ -3,7 +3,8 @@
 from graphe.digraph import digraph
 from collections import deque
 
-class DirectedCycle():
+
+class DirectedCycle:
 
     def __init__(self, DG):
         assert isinstance(DG, digraph.Digraph)
@@ -15,7 +16,6 @@ class DirectedCycle():
         for v in range(DG.V):
             if not self.marked[v]:
                 self.dfs(DG, v)
-
 
     def dfs(self, DG, v):
         self.onstack[v] = True
@@ -35,10 +35,8 @@ class DirectedCycle():
                 self.cycle.append(v)
         self.onstack[v] = False
 
-
     def has_cycle(self):
         return len(self.cycle) != 0
-
 
     def get_cycle(self):
         return self.cycle

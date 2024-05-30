@@ -4,10 +4,11 @@ import sys
 
 from graphe.digraph import digraph
 
-class SymbolDigraph():
+
+class SymbolDigraph:
     def __init__(self, infile, sc=' '):
-        self.keys = [] # vertice index to name
-        self.ST = {} # vertice name to index
+        self.keys = []  # vertice index to name
+        self.ST = {}  # vertice name to index
 
         lines = open(infile).read().splitlines()
         for line in lines:
@@ -32,10 +33,8 @@ class SymbolDigraph():
                 w = self.ST[i]
                 self.DG.add_edge(v, w)
 
-
     def graph(self):
         return self.DG
-
 
     def node_names(self):
         return self.keys

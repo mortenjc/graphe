@@ -2,7 +2,8 @@
 
 from graphe.digraph import digraph
 
-class DirectedDFSearch():
+
+class DirectedDFSearch:
     def __init__(self, DG, s):
         assert isinstance(DG, digraph.Digraph)
         self.marked = [False for i in range(DG.V)]
@@ -17,12 +18,10 @@ class DirectedDFSearch():
                 self.validate_vertex(v)
             for v in s:
                 if not self.marked[v]:
-                    self.dfs(DG, v);
-
+                    self.dfs(DG, v)
 
     def validate_vertex(self, v):
         assert v >= 0 and v < self.V
-
 
     def dfs(self, DG, v):
         self.marked[v] = True
@@ -31,14 +30,11 @@ class DirectedDFSearch():
                 self.edgeTo[w] = v
                 self.dfs(DG, w)
 
-
     def is_marked(self, v):
         return self.marked[v]
 
-
     def has_path_to(self, v):
         return self.marked[v]
-
 
     def path_to(self, v):
         path = []
@@ -50,7 +46,6 @@ class DirectedDFSearch():
             x = self.edgeTo[x]
         path.append(self.s)
         return path
-
 
     def count(self):
         return sum([1 for x in self.marked if x == True]) - 1

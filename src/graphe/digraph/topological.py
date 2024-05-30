@@ -6,7 +6,7 @@ from graphe.digraph import cycle
 from graphe.digraph import ddfo
 
 
-class Topological():
+class Topological:
     def __init__(self, G):
         assert isinstance(G, digraph.Digraph)
         self.G = G
@@ -22,7 +22,6 @@ class Topological():
 
         for i, v in enumerate(self.order):
             self.rank[v] = i
-
 
     def get_order(self):
         return self.order

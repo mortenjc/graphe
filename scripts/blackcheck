@@ -1,1 +1,4 @@
-find src -name "*.py" | xargs black --check 
+#!/bin/bash
+
+find src -name "*.py" | xargs black --check --skip-string-normalization $@
+# could use --diff

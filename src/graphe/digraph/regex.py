@@ -6,7 +6,7 @@ from graphe.digraph import digraphdfs
 from collections import deque
 
 
-class Regex():
+class Regex:
     def __init__(self, regexp):
         self.re = regexp.strip()
         self.M = len(self.re)
@@ -21,21 +21,20 @@ class Regex():
                 opr = ops.pop()
                 if self.re[opr] == '|':
                     lp = ops.pop()
-                    self.G.add_edge(lp, opr+1)
+                    self.G.add_edge(lp, opr + 1)
                     self.G.add_edge(opr, i)
                 elif self.re[opr] == '(':
                     lp = opr
                 else:
                     assert False
 
-            if i < self.M-1 and self.re[i+1] == '*':
-                self.DG.add_edge(lp, i+1)
-                self.DG.add_edge(i+1, lp)
+            if i < self.M - 1 and self.re[i + 1] == '*':
+                self.DG.add_edge(lp, i + 1)
+                self.DG.add_edge(i + 1, lp)
             if self.re[i] == '(' or self.re[i] == '*' or self.re[i] == ')':
-                self.DG.add_edge(i, i+1)
+                self.DG.add_edge(i, i + 1)
         if len(ops) != 0:
             raise Exception('invalid regular expression {}'.format(regexp))
-
 
     def match(self, text):
         dfs = digraphdfs.DirectedDFSearch(self.DG, 0)
@@ -54,19 +53,19 @@ class Regex():
                 if v == self.M:
                     continue
                 if self.re[v] == text[i] or self.re[v] == '.':
-                    match.append(v+1)
+                    match.append(v + 1)
 
                 if len(match) == 0:
                     continue
 
-                dfs = digraphdfs.DirectedDFSearch(self.DG, match);
+                dfs = digraphdfs.DirectedDFSearch(self.DG, match)
                 pc = set()
                 for v in range(self.DG.V):
-                    if (dfs.is_marked(v)):
+                    if dfs.is_marked(v):
                         pc.add(v)
 
                 if len(pc) == 0:
-                    return False # if no reacable states, finish early
+                    return False  # if no reacable states, finish early
 
             for v in pc:
                 if v == self.M:
@@ -103,6 +102,5 @@ if __name__ == '__main__':
     matches = ['11', '011', '110', '1001', '1100', '1111', '10010']
     for m in matches:
         assert re.match(m) == True
-
 
     print('passed')

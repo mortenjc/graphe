@@ -6,7 +6,7 @@ from graphe.digraph import ddfo
 from collections import deque
 
 
-class KnSSCC():
+class KnSSCC:
     def __init__(self, Digraph):
         self.count = 0
         self.marked = [False for i in range(Digraph.V)]
@@ -20,7 +20,6 @@ class KnSSCC():
                 self.dfs(Digraph, v)
                 self.count += 1
 
-
     def dfs(self, Digraph, v):
         self.marked[v] = True
         self.id[v] = self.count
@@ -28,18 +27,14 @@ class KnSSCC():
             if not self.marked[w]:
                 self.dfs(Digraph, w)
 
-
     def strongly_connected(self, v, w):
         return self.id[v] == self.id[w]
-
 
     def get_id(self, v):
         return self.id[v]
 
-
     def get_count(self):
         return self.count
-
 
 
 if __name__ == '__main__':

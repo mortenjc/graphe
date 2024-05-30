@@ -3,13 +3,13 @@
 import sys
 from collections import deque
 
-class BFSearch():
+
+class BFSearch:
     def __init__(self, G, s):
         self.marked = [False for i in range(G.V)]
         self.edgeTo = [-1 for i in range(G.V)]
         self.s = s
         self.bfs(G, s)
-
 
     def bfs(self, Graph, s):
         Q = deque()
@@ -23,10 +23,8 @@ class BFSearch():
                     self.marked[w] = True
                     Q.append(w)
 
-
     def has_path_to(self, v):
         return self.marked[v]
-
 
     def path_to(self, v):
         path = []
@@ -38,7 +36,6 @@ class BFSearch():
             x = self.edgeTo[x]
         path.append(self.s)
         return path
-
 
     def count(self):
         return sum([1 for x in self.marked if x == True]) - 1
