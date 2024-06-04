@@ -20,6 +20,8 @@ class KnSSCC:
                 self.dfs(Digraph, v)
                 self.count += 1
 
+        assert check(G)
+
     def dfs(self, Digraph, v):
         self.marked[v] = True
         self.id[v] = self.count
@@ -39,7 +41,7 @@ class KnSSCC:
 
 if __name__ == '__main__':
 
-    DG = digraph.Digraph('../../data/tinyDG.txt')
+    DG = digraph.Digraph('../../../data/tinySCDG.txt')
 
     SCC = KnSSCC(DG)
 

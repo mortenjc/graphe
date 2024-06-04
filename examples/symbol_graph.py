@@ -1,7 +1,7 @@
 #!/usr/local/bin/python3
 
 import sys
-from graphe.digraph import symbolgraph
+from graphe.digraph import symboldigraph
 from graphe import draw
 
 G = symbolgraph.SymbolGraph('../data/jobs.txt', '/')

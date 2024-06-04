@@ -2,6 +2,7 @@
 
 
 from graphe.digraph import symboldigraph
+from graphe.digraph import digraph
 from graphe.digraph import cycle
 from graphe.digraph import ddfo
 
@@ -12,9 +13,9 @@ class Topological:
         self.G = G
         self.rank = [-1 for i in range(self.G.V)]
 
-        cycle = cycle.DirectedCycle(G)
-        if cycle.has_cycle():
-            print('Topological sort not - graph has cycle')
+        cyc = cycle.DirectedCycle(self.G)
+        if cyc.has_cycle():
+            print('Topological sort not possible - graph has cycle')
             raise Exception('G has cycle')
 
         dfo = ddfo.DepthFirstOrder(self.G)
@@ -31,7 +32,7 @@ if __name__ == '__main__':
 
     SG = symboldigraph.SymbolDigraph('../../../data/jobs.txt', '/')
 
-    TS = Topological(SG.G)
+    TS = Topological(SG.DG)
     names = SG.node_names()
     for v in TS.get_order():
         print(f'{v} {names[v]}')

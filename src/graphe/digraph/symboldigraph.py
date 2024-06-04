@@ -42,6 +42,6 @@ class SymbolDigraph:
 
 if __name__ == '__main__':
     sg = SymbolDigraph('../../../data/routes.txt')
-    assert sg.G.V == 10
-    assert sg.G.E == 18
+    assert sg.DG.V == 10
+    assert sg.DG.E == 18
     assert sg.keys[0] == 'JFK'
