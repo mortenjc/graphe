@@ -64,4 +64,4 @@ class Draw:
                         self.g.edge(vname, wname, rank=f'{v}')
                     seen.add((v, w))
 
-        self.g.view(tempfile.mktemp('.gv'))
+        self.g.view()

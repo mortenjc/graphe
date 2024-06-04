@@ -4,7 +4,7 @@ import sys
 from graphe.digraph import symboldigraph
 from graphe import draw
 
-G = symbolgraph.SymbolGraph('../data/jobs.txt', '/')
+G = symboldigraph.SymbolDigraph('../data/jobs.txt', '/')
 
 fig = draw.Draw(digraph=True)
 fig.set_names(G.keys)
