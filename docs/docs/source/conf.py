@@ -27,10 +27,12 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme' # was 'nature'
+html_logo = "graphe_logo.png"
 html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
     "home_page_in_toc": True,
     "show_navbar_depth": 1
 }
 html_static_path = ['_static']
-
 html_css_files = ["custom.css"]
