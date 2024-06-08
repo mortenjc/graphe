@@ -27,7 +27,7 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme' # was 'nature'
-html_logo = "graphe_logo.png"
+html_logo = "_static/graphe_logo.png"
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
